@@ -1,5 +1,6 @@
 {
   "name": "adopt_dont_shop",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "heroku-postbuild": "npm run build"
 }
