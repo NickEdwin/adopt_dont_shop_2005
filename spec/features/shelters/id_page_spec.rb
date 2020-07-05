@@ -45,7 +45,7 @@ RSpec.describe "shelters unique id page", type: :feature do
     visit "/shelters/#{shelter_1.id}"
 
     expect(page).to have_button("Delete Shelter")
-    # only way to test buttons path ? 
+
     expect(page).to have_link(:href=>"/shelters")
   end
 end

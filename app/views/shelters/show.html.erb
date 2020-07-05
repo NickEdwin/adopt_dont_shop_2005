@@ -1,16 +1,18 @@
+<a href="/pets">View All Pets</a>
+<a href="/shelters">View All Shelters</a><br><br>
+
 <a href="/shelters">Return to Shelter Index</a>
 
 <div>
-  <h1><%= @shelter.name %></h1>
+  <h1><a href="/shelters/<%= @shelter.id %>"style="text-decoration: none"><%= @shelter.name %></a></h1>
     <p>Address: <%= @shelter.address %></p>
     <p>City: <%= @shelter.city %></p>
     <p>State: <%= @shelter.state %></p>
     <p>Zip Code: <%= @shelter.zip %></p>
 </div>
-
+<a href="/shelters/<%= @shelter.id %>/pets">View Pet's Available at This Location</a><br><br>
 <a href="/shelters/<%= @shelter.id %>/edit">Update Shelter</a>
 <br></br>
-<!-- <a href="/shelters/<%= @shelter.id %>/delete">Delete Shelter</a> -->
 <form action="/shelters/<%= @shelter.id %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="DELETE">
