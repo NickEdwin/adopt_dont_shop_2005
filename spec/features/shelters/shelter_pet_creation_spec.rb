@@ -8,11 +8,13 @@ RSpec.describe "pets page from shelter", type: :feature do
                               state: "CO",
                               zip: 80218)
 
-    pet_1 = Pet.create(image: "cat.jpg",
-                       name: "Kitty",
-                       age: 9,
-                       sex: "female",
-                       shelter_id: shelter_1.id)
+      pet_1 = Pet.create(image: "cat1.jpg",
+                         name: "Kitty",
+                         age: 9,
+                         sex: "female",
+                         shelter_id: shelter_1.id,
+                         description: "A tiny cat.",
+                         adoption_status: "Adoptable")
 
     visit "/shelters/#{shelter_1.id}/pets/new"
 
