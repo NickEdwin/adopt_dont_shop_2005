@@ -19,12 +19,12 @@ RSpec.describe "pets page", type: :feature do
 
     visit "/pets/#{pet_1.id}"
 
-    expect(page).to have_content(pet_1.image)
+    expect(page).to have_css("img[src*='cat1.jpg']")
     expect(page).to have_content(pet_1.name)
     expect(page).to have_content(pet_1.description)
     expect(page).to have_content(pet_1.age)
     expect(page).to have_content(pet_1.sex)
-    expect(page).to have_content("Available for adoption:")
+    expect(page).to have_content("Status:")
     expect(page).to have_content(pet_1.adoption_status)
 
 

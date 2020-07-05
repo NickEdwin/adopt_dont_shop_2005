@@ -30,6 +30,6 @@ RSpec.describe "pets page from shelter", type: :feature do
 
     visit "/shelters/#{shelter_1.id}/pets"
 
-    expect(page).to have_link("Create Pet", :href=>"/shelters/:shelter_id/pets/new")
+    expect(page).to have_link("Create Pet", :href=>"/shelters/#{shelter_1.id}/pets/new")
   end
 end

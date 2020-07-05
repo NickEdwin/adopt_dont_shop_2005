@@ -12,11 +12,11 @@ end
 
     visit "/shelters/new"
 
-    expect(page).to have_field("shelter[name]")
-    expect(page).to have_field("shelter[address]")
-    expect(page).to have_field("shelter[city]")
-    expect(page).to have_field("shelter[state]")
-    expect(page).to have_field("shelter[zip]")
+    expect(page).to have_field("name")
+    expect(page).to have_field("address")
+    expect(page).to have_field("city")
+    expect(page).to have_field("state")
+    expect(page).to have_field("zip")
   end
 
   it "contains button to submit information" do

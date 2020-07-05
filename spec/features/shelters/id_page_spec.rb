@@ -7,7 +7,7 @@ RSpec.describe "shelters unique id page", type: :feature do
 
     visit "/shelters/#{shelter_1.id}"
 
-    expect(page).to have_link("Return to Shelter Index", :href=>"/shelters")
+    expect(page).to have_link("View All Shelters", :href=>"/shelters")
   end
 
   it "contains shelter information" do
