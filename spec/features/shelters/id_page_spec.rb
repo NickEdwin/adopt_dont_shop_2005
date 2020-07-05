@@ -10,6 +10,15 @@ RSpec.describe "shelters unique id page", type: :feature do
     expect(page).to have_link("View All Shelters", :href=>"/shelters")
   end
 
+  it "can see return to pets index link" do
+
+    shelter_1 = Shelter.create(name: "Pawsitively Pawsome Animal Shelter")
+
+    visit "/shelters/#{shelter_1.id}"
+
+    expect(page).to have_link("View All Pets", :href=>"/pets")
+  end
+
   it "contains shelter information" do
 
     shelter_1 = Shelter.create(name: "Pawsitively Pawsome Animal Shelter",
