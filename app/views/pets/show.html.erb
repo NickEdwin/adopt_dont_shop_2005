@@ -1,0 +1,18 @@
+<a href="/pets">View All Pets</a>
+<a href="/shelters">View All Shelters</a>
+
+<h1>Pet information</h1>
+  <p><img src="<%= @pet.image %>" alt="Pet Image" style="width:400px;height:300px;"></p>
+  <p>Name: <a href="/pets/<%= @pet.id %>"style="text-decoration: none"><%= @pet.name %></a></p>
+  <p>Description: <%= @pet.description %></p>
+  <p>Age: <%= @pet.age %></p>
+  <p>Sex: <%= @pet.sex %></p>
+  <p>Available for adoption: <%= @pet.adoption_status %></p>
+
+  <a href="/pets/<%= @pet.id %>/edit">Update Pet</a>
+  <br></br>
+  <form action="/pets/<%= @pet.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Pet"/>
+  </form>

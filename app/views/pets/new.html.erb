@@ -1,0 +1,19 @@
+<a href="/pets">View All Pets</a>
+<a href="/shelters">View All Shelters</a>
+
+  <h1> Enter new pet information below </h1>
+<%= form_tag "/shelters/#{@shelter.id}/pets", method: :post do %>
+  <%= label_tag "Image:" %><br/>
+  <%= text_field_tag :image %><br/>
+  <%= label_tag "Name:" %><br/>
+  <%= text_field_tag :name %><br/>
+  <%= label_tag "Description:" %><br/>
+  <%= text_field_tag :description %><br/>
+  <%= label_tag "Age:" %><br/>
+  <%= text_field_tag :age %><br/>
+  <%= label_tag "Sex:" %><br/>
+  <%= text_field_tag :sex %><br/>
+  <%= label_tag "Adoption Status:" %><br/>
+  <%= text_field_tag :adoption_status, "Adoptable", readonly: true %><br/><br/>
+  <%= submit_tag "Create Pet" %>
+<% end %>

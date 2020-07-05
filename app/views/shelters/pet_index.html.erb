@@ -1,0 +1,29 @@
+<a href="/pets">View All Pets</a>
+<a href="/shelters">View All Shelters</a>
+
+
+<h1>Pets available at this location</h1>
+
+<% @pets.each do |pet| %>
+<% if pet.shelter_id == @shelter.id %>
+  <p><img src="<%= pet.image %>" alt="Pet Image" style="width:400px;height:300px;"></p>
+  <p>Name: <a href="/pets/<%= pet.id %>"style="text-decoration: none"><%= pet.name %></a></p>
+  <p>Description: <%= pet.description %></p>
+  <p>Age: <%= pet.age %></p>
+  <p>Sex: <%= pet.sex %></p>
+  <p>Status: <%= pet.adoption_status %></p>
+  <ul>
+    <li><a href="/pets/<%= pet.id %>/edit">Edit <%= pet.name %>'s Information</a></li>
+  </ul>
+  <form action="/pets/<%= pet.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete <%= pet.name %>"/>
+  </form>
+  <br>
+  <% end %>
+<% end %>
+
+<ul>
+  <li><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></li>
+</ul>

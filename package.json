@@ -2,5 +2,8 @@
   "name": "adopt_dont_shop",
   "private": true,
   "dependencies": {},
-  "heroku-postbuild": "npm run build"
+  "scripts": {
+   "start": "node index.js",
+   "heroku-postbuild": "npm run build",
+}
 }
