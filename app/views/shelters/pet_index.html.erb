@@ -1,9 +1,46 @@
-<a href="/pets">View All Pets</a>
-<a href="/shelters">View All Shelters</a>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
 
-<h1>Pets available at this location</h1>
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/shelters">View All Shelters</a>
+  <a href="/pets">View All Pets</a>
+</div>
+
+<div style="padding-left:16px">
+  <h2> Pets available at this location </h2>
 <% @pets.each do |pet| %>
 <% if pet.shelter_id == @shelter.id %>
   <p><img src="<%= pet.image %>" alt="Pet Image" style="width:400px;height:300px;"></p>
@@ -27,3 +64,7 @@
 <ul>
   <li><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></li>
 </ul>
+</div>
+
+</body>
+</html>
